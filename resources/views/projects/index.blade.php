@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-<h1>Projects</h1>
+<h1>{{ auth()->user()->name }} Projects</h1>
 <div>
     @foreach ($projects as $project)
         <div class="card mb-3">

@@ -8,7 +8,8 @@
             <h3 class="card-title">{{ $project->title }}</h3>
 
             <p class="card-text">{{ $project->description }} </p>
-
+            <hr>
+            <h3>Task List</h3>
             @if ($project->tasks->count())
                 <div>
                     @foreach ($project->tasks as $task)

@@ -24,3 +24,9 @@ Route::patch('/tasks/{task}', 'ProjectTasksController@update');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin-login', 'Auth\AdminLoginController@showLoginForm');
+
+Route::post('/admin-login', ['as'=>'admin-login', 'uses'=>'Auth\AdminLoginController@login']);
+
+Route::get('/admin-dashboard', 'AdminDashboardController@showAdminDashboard')->middleware('is-admin');
